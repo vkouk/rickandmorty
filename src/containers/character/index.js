@@ -85,7 +85,7 @@ const CharacterPage = () => {
         alignItems="center"
       >
         <Text textTransform="uppercase" margin="0" weight={700}>
-          Episodes featured:
+          Featured episodes:
         </Text>
         <Grid column width="100%" alignItems="center" margin="0.5rem 0 0 0">
           {episodeEntities.map((episode) => (

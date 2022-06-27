@@ -11,20 +11,42 @@ import Loader from 'presenters/molecules/loader'
 
 const Container = styled(Grid)`
   height: 100%;
-  overflow-y: auto;
   padding: 1rem;
 `
 
 const CharactersPage = () => {
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(
+    localStorage.getItem('currentPage') || 1
+  )
   const { loading, error, data } = useQuery(`/character?page=${currentPage}`)
   const navigate = useNavigate()
 
-  if (error) return <Container>{error}</Container>
+  if (error)
+    return (
+      <Container justifyContent="center" alignItems="center">
+        {error}
+      </Container>
+    )
   if (loading) return <Loader />
 
+  const onPrevPage = () =>
+    setCurrentPage((currentPage) => {
+      const newCurrentPage = +currentPage - 1
+      localStorage.setItem('currentPage', newCurrentPage)
+
+      return newCurrentPage
+    })
+
+  const onNextPage = () =>
+    setCurrentPage((currentPage) => {
+      const newCurrentPage = +currentPage + 1
+      localStorage.setItem('currentPage', newCurrentPage)
+
+      return newCurrentPage
+    })
+
   return (
-    <Container column justifyContent="space-between">
+    <Container column scrollable justifyContent="space-between">
       <GridContainer>
         {data.results.map((character) => (
           <Card
@@ -43,8 +65,8 @@ const CharactersPage = () => {
         ))}
       </GridContainer>
       <Pagination
-        onPrevPage={() => setCurrentPage((currentPage) => currentPage - 1)}
-        onNextPage={() => setCurrentPage((currentPage) => currentPage + 1)}
+        onPrevPage={onPrevPage}
+        onNextPage={onNextPage}
         isPrevPageDisabled={!data.info.prev}
         isNextPageDisabled={!data.info.next}
       />

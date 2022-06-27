@@ -6,13 +6,11 @@ import theme from 'base/theme'
 
 import Router from 'presenters/Router'
 
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Router />
-    </ThemeProvider>
-  )
-}
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <Router />
+  </ThemeProvider>
+)
 
 export default App

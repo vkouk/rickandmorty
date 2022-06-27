@@ -15,7 +15,7 @@ const Button = styled('button')`
 
   &:hover {
     background: ${(props) => props.theme.colors.black};
-    color: white;
+    color: ${(props) => props.theme.colors.white};
   }
 `
 
