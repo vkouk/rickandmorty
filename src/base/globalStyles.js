@@ -5,6 +5,8 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-size: ${(props) => props.theme.remSize}px;
     font-family: ${(props) => props.theme.fonts.primary.name};
+    color: ${(props) => props.theme.colors.black};
+    background: ${(props) => props.theme.colors['yellow-200']};
   }
   body {
     margin: 0;

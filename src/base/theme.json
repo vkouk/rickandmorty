@@ -1,5 +1,11 @@
 {
   "remSize": "16",
+  "colors": {
+    "black": "#000",
+    "grey-100": "#bfbfbf",
+    "yellow-200": "#fbf976",
+    "blue-100": "#a9d3e9"
+  },
   "fonts": {
     "primary": {
       "name": "'Open Sans', sans-serif"
