@@ -19,10 +19,10 @@ const Image = styled('img')`
 const Text = styled('span')`
   font-size: 0.95rem;
   font-weight: ${(props) => props.weight || 'normal'};
-  line-height: 1rem;
+  line-height: 1.25rem;
   margin: ${(props) => props.margin || '0.5rem 0'};
   text-transform: ${(props) => props.textTransform || 'none'};
-  word-break: break-all;
+  word-break: break-word;
   text-align: center;
 
   ${(props) =>

@@ -89,7 +89,9 @@ const CharacterPage = () => {
         </Text>
         <Grid column width="100%" alignItems="center" margin="0.5rem 0 0 0">
           {episodeEntities.map((episode) => (
-            <Text key={episode.id}>{episode.name}</Text>
+            <Text key={episode.id}>
+              {episode.episode} - {episode.name}
+            </Text>
           ))}
         </Grid>
       </Grid>
