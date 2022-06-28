@@ -59,7 +59,9 @@ const CharactersPage = () => {
               <Card.Text textTransform="capitalize">
                 Gender: {character.gender}
               </Card.Text>
-              <Card.Text>Species: {character.species}</Card.Text>
+              <Card.Text textTransform="capitalize">
+                Species: {character.species}
+              </Card.Text>
             </Card.Body>
           </Card>
         ))}

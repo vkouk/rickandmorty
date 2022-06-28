@@ -67,13 +67,16 @@ const CharacterPage = () => {
           <Text textTransform="capitalize" appendSlash margin="0 0.5rem 0 0">
             Dimension: {locationData.results[0].dimension}
           </Text>
-          <Text appendSlash margin="0 0.5rem 0 0">
+          <Text textTransform="capitalize" appendSlash margin="0 0.5rem 0 0">
             Location Type: {locationData.results[0].type}
           </Text>
           <Text appendSlash margin="0 0.5rem 0 0">
             Residents Amount: {locationData.results[0].residents.length}
           </Text>
-          <Text>Species: {data.species}</Text>
+          <Text textTransform="capitalize" appendSlash margin="0 0.5rem 0 0">
+            Status: {data.status}
+          </Text>
+          <Text textTransform="capitalize">Species: {data.species}</Text>
         </Grid>
       </Header>
       <Grid
