@@ -5,7 +5,8 @@ const Button = styled('button')`
   border: ${(props) => `1px solid ${props.theme.colors.black}`};
   background: transparent;
   transition: all 0.5s ease;
-  padding: 0.5rem;
+  padding: ${(props) => props.padding || '0.5rem'};
+  margin: ${(props) => props.margin || '0'};
   cursor: pointer;
 
   &:disabled {

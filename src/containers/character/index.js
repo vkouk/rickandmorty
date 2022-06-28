@@ -42,8 +42,17 @@ const CharacterPage = () => {
   const isLoading = loading || episodeLoading || locationLoading
   const errorMessage = error || episodeError || locationError
 
+  const onHomeNavigation = () => navigate('/')
+
   if (errorMessage)
-    return <Container justifyContent="center">{errorMessage}</Container>
+    return (
+      <Container column alignItems="center" justifyContent="center">
+        <span>{errorMessage}</span>
+        <Button margin="1rem 0 0 0" onClick={onHomeNavigation}>
+          Return to home page
+        </Button>
+      </Container>
+    )
   if (isLoading) return <Loader />
 
   const episodeEntities = Array.isArray(episodeData)
@@ -99,7 +108,7 @@ const CharacterPage = () => {
         </Grid>
       </Grid>
       <Grid width="100%" margin="auto 0 auto 0" justifyContent="flex-start">
-        <Button onClick={() => navigate('/')}>Return to characters</Button>
+        <Button onClick={onHomeNavigation}>Return to home page</Button>
       </Grid>
     </Container>
   )
