@@ -19,10 +19,18 @@ const Pagination = ({
 
   return (
     <Grid margin="2rem 0 0 0" justifyContent="space-between">
-      <Button onClick={onPrevPage} disabled={isPrevPageDisabled}>
+      <Button
+        onClick={onPrevPage}
+        disabled={isPrevPageDisabled}
+        data-testhook-id="prev-page-btn"
+      >
         Prev Page
       </Button>
-      <Button onClick={onNextPage} disabled={isNextPageDisabled}>
+      <Button
+        onClick={onNextPage}
+        disabled={isNextPageDisabled}
+        data-testhook-id="next-page-btn"
+      >
         Next Page
       </Button>
     </Grid>
